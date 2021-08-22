@@ -71,7 +71,7 @@ export const Location = (props) => {
 
         return (<div style={cornerStyle}>
             <div style={cornerTextStyle}>
-                Avocado
+
             </div>
         </div>)
     }
@@ -109,7 +109,7 @@ export const Location = (props) => {
         fontSize: SIZE_MODIFIER / 30 + VIEWPORT_UNIT,
     }
 
-    const stringYears = years[yearIndex] === -1 ? "∞" : years[yearIndex]
+    const stringYears = years[yearIndex] === -1 ? "🥑" : years[yearIndex]
     const yearSpan = <span style={yearStyle}>{stringYears}</span>
     const bodyLocContent = <div>
         <>{bodyName}</>

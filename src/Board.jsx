@@ -56,18 +56,36 @@ export const Board = () => {
     // TODO: where this href goes
     const suburbItems = Object.keys(inputData).map((suburb) => <Dropdown.Item eventKey={suburb}>{suburb}</Dropdown.Item>)
     const suburbsDropdownStyle = {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 15
+        // display: 'flex',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        // margin: 15
+        position: 'absolute',
+        top: '70%',
+        left: '50%',
+        transform: `translate(-50%, -50%)`,
+        zIndex: 50,
     }
-    const suburbsDropdown = <> 
+
+    const explainTextStyle = {
+        position: 'absolute',
+        top: '30%',
+        left: '50%',
+        transform: `translate(-50%, -50%)`,
+        zIndex: 50,
+        maxWidth: SIZE_MODIFIER * 5,
+        textAlign: 'center',
+        color: '#3C5526',
+    }
+
+    const suburbsDropdown = <>
         <DropdownButton id="dropdown-basic-button" title="Where do you live? ಠ_ಠ" style={suburbsDropdownStyle} onSelect={setSelected}>
             {suburbItems}
         </DropdownButton>
     </>
-    
+
     return <div>
+        <div style={explainTextStyle}>Based on where you currently live (which you can select in the dropdown list), this app shows you exactly how many years it would take before you can afford to live in the local government area (LGA) on the board. Any number of years above 25 are denoted with 🥑.</div>
         {suburbsDropdown}
         <Container fluid style={outerContainerStyle}>
             <img src="https://i.imgur.com/KeDqLyk.png" style={imgStyle} />

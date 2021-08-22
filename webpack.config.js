@@ -47,7 +47,9 @@ module.exports = {
         filename: 'bundle.js',
     },
     devServer: {
-        contentBase: path.resolve(__dirname, './public'),
+        static: {
+            directory: path.join(__dirname, './public'),
+        },
     },
     // externals: {
     //     'react': 'React'
